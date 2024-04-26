@@ -15,6 +15,7 @@ const config: Config = {
       },
       colors: {
         "neutral-500": "hsl(var(--neutral-500-hsl))",
+        "neutral-900": "hsl(var(--neutral-900-hsl))",
       },
     },
   },
