@@ -162,7 +162,8 @@ export default function HomePage() {
             <Button>Хочу танцевать</Button>
           </form>
           <Link
-            href="#"
+            href="/confidentiality_policy.pdf"
+            target="_blank"
             className="text-center text-neutral-500 text-sm underline self-center"
           >
             Политика конфиденциальности

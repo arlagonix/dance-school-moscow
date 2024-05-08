@@ -85,7 +85,7 @@ const linksData: HeaderType[] = [
 
 const Menu = () => {
   return (
-    <nav className="absolute left-[-20rem]">
+    <nav className="absolute left-[-20rem] hidden 2xl:inline">
       <div>
         <Link href="/">
           <Image
