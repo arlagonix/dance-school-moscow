@@ -144,8 +144,8 @@ const questionsData: QuestionType[] = [
 export default function HomePage() {
   return (
     <>
-      <main className="mx-auto max-w-screen-md relative my-16">
-        <Menu />
+      <Menu />
+      <main className="mx-auto w-[min(100%_-_16px*2,768px)] relative mt-16">
         <h1 className="text-center text-5xl font-extrabold">
           D.A.N.C.E. School
         </h1>
@@ -190,7 +190,7 @@ export default function HomePage() {
         </Section>
         <Section>
           <H2>Полезная информация</H2>
-          <div className="grid gap-8 grid-cols-2 mt-6">
+          <div className="grid gap-8 grid-cols-[repeat(auto-fit,minmax(min(300px,100%),1fr))] mt-6">
             {linkCardsData.map((item) => (
               <Link
                 key={item.id}

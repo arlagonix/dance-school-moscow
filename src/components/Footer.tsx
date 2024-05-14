@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="text-neutral-500 text-center my-16 flex flex-col items-center gap-2">
+    <footer className="text-neutral-500 text-center mt-16 mb-4 flex flex-col items-center gap-2">
       <p className="leading-7 text-sm">
         ИП Самохвалова Д.В., ИНН 971504851467, ОГРНИП 316774600521655
       </p>
