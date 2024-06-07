@@ -19,6 +19,7 @@ import ClockIcon from "@/components/svg/icons_small/clock.svg";
 import { SVGProps, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import useDisableBodyScrolling from "@/lib/hooks/useDisableScrolling";
 
 type HeaderType = {
   id: number;
@@ -88,12 +89,13 @@ const linksData: HeaderType[] = [
 
 const Menu = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+  useDisableBodyScrolling(showMobileMenu);
   return (
     <nav
       className={cn(
-        "z-10 max-h-screen overflow-scroll",
-        "mobile:bg-white mobile:fixed mobile:top-0 mobile:left-1/2 mobile:-translate-x-1/2 mobile:w-[min(100%,var(--standard-width))]",
-        "desktop:absolute desktop:left-[calc(50%-45rem)]"
+        "z-10 max-h-screen top-16 fixed",
+        "mobile:bg-white mobile:top-0 mobile:left-1/2 mobile:-translate-x-1/2 mobile:w-[min(100%,var(--standard-width))]",
+        "desktop:left-[calc(50%-45rem)] desktop:max-h-[calc(100vh-4rem)]"
       )}
     >
       <div className="hidden desktop:inline">
@@ -116,7 +118,7 @@ const Menu = () => {
           </strong>
         </p>
       </div>
-      <div className="flex justify-between items-center desktop:hidden p-4 bg-white border-b border-neutral-300 sticky top-0 z-20">
+      <div className="flex justify-between items-center desktop:hidden p-4 bg-white border-b border-neutral-300 fixed w-[min(100vw,768px)] top-0 z-20">
         <Link href="/">
           <Image
             src="/dance_logo.png"
@@ -130,7 +132,7 @@ const Menu = () => {
       </div>
       <div
         className={cn(
-          "mobile:w-[min(100%-8px*2,var(--standard-width))] mx-auto",
+          "mobile:w-[min(100%-8px*2,var(--standard-width))] mx-auto h-screen overflow-auto mobile:pt-16 mobile:pb-4",
           !showMobileMenu && "mobile:hidden"
         )}
       >
