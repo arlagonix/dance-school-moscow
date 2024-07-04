@@ -17,16 +17,16 @@ const ClassSignUp = ({
         {description ??
           'Начни танцевать хастл бесплатно: запишись на бесплатный пробный урок'}
       </p>
-      <form className="flex gap-4">
+      <form className="flex gap-4 mobile:flex-wrap">
         <Input className="bg-white" placeholder="Телефон *" />
         <Input className="bg-white" placeholder="Имя и Фамилия" />
-        <Button>Хочу танцевать</Button>
+        <Button className="mobile:w-full">Хочу танцевать</Button>
       </form>
-      <div className="mx-auto">
+      <div className="mx-auto text-center">
         <Link
           href="/confidentiality_policy.pdf"
           target="_blank"
-          className="self-center text-center text-sm text-neutral-500 underline transition-colors hover:bg-slate-200"
+          className="self-center whitespace-nowrap text-center text-sm text-neutral-500 underline transition-colors hover:bg-slate-200"
         >
           Политика конфиденциальности
         </Link>
@@ -36,7 +36,7 @@ const ClassSignUp = ({
             <Link
               href="/contract.pdf"
               target="_blank"
-              className="self-center text-center text-sm text-neutral-500 underline transition-colors hover:bg-slate-200"
+              className="self-center whitespace-nowrap text-center text-sm text-neutral-500 underline transition-colors hover:bg-slate-200"
             >
               Договор - публичная оферта
             </Link>

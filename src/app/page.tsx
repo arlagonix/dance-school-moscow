@@ -196,7 +196,6 @@ export default function HomePage() {
             ))}
           </Accordion>
         </Section>
-        <Footer />
       </Main>
     </>
   )

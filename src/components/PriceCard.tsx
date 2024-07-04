@@ -28,7 +28,7 @@ const PriceCard = ({
   purchaseLink,
 }: PriceCardProps) => {
   return (
-    <article className="max-w-[360px] flex-1 basis-[360px] rounded-xl border border-slate-300 bg-white">
+    <article className="flex max-w-[360px] flex-1 basis-[360px] flex-col rounded-xl border border-slate-300 bg-white">
       <div className="my-6 flex flex-col items-center px-6">
         <h3 className="text-center text-xl font-bold uppercase">{title}</h3>
         {subtitle !== undefined && (
@@ -49,14 +49,14 @@ const PriceCard = ({
           )}
         </div>
         {avgPricePerClass !== undefined && (
-          <p className="text-xl">
+          <p className="mt-2 text-xl">
             ≈ <span className="font-black">{avgPricePerClass} ₽</span>{' '}
             {avgPricePerClassUnits}
           </p>
         )}
       </div>
       {description && (
-        <div className="m-6 text-center leading-normal text-slate-500">
+        <div className="m-6 flex flex-grow flex-col justify-center text-center leading-normal text-slate-500">
           {Array.isArray(description) &&
             description.map((item, index) => (
               <p key={index} className="leading-7">
@@ -70,7 +70,7 @@ const PriceCard = ({
         </div>
       )}
       {price !== '0' && purchaseLink !== undefined && (
-        <div className="m-6">
+        <div className="mx-6 mb-6">
           <Link
             href={purchaseLink}
             className={cn(buttonVariants({ variant: 'default' }), 'w-full')}
@@ -80,7 +80,7 @@ const PriceCard = ({
         </div>
       )}
       {price === '0' && (
-        <div className="m-6">
+        <div className="mx-6 mb-6">
           <Button disabled className="w-full">
             Бесплатно
           </Button>
