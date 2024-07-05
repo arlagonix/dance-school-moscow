@@ -62,6 +62,7 @@ const linksData: HeaderType[] = [
     id: 4,
     name: 'Преподаватели',
     icon: <UsersIcon {...menuIconProps} />,
+    link: '/trainers',
   },
   {
     id: 5,
