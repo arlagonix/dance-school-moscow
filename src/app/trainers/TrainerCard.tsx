@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { Fragment } from 'react'
-import { TrainerType } from './trainersData'
+import { TrainerType } from '../../data/trainersData'
 import Link from 'next/link'
 
 const RankBadge = ({ rank }: { rank: string }) => {
@@ -16,11 +16,11 @@ const TrainerCard = ({
   imgSrc,
   description,
   ranks,
-  link,
+  slug,
 }: TrainerType) => {
   return (
     <Link
-      href={link}
+      href={`trainers/${slug}`}
       className="group flex flex-col no-underline transition active:scale-[0.98]"
     >
       <Image

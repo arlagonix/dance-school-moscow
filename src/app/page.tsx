@@ -20,7 +20,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion'
-import Footer from '@/components/Footer'
 import Main from '@/components/Main'
 import H1 from '@/components/H1'
 import ClassSignUp from '@/components/ClassSignUp'
@@ -43,7 +42,7 @@ const linkCardsData: LinkCardType[] = [
     id: 1,
     title: 'Стоимость занятий',
     description: 'Абонементы на посещение занятий, способы оплаты, акции',
-    href: '#',
+    href: '/pricing',
     icon: <MoneyBagIcon {...linkCardProps} />,
   },
   {
@@ -59,7 +58,7 @@ const linkCardsData: LinkCardType[] = [
     title: 'Преподаватели',
     description:
       'Здесь вы узнаете, кто преподает в нашей школе, и сможете найти того, с кем вам будет наиболее комфортно заниматься.',
-    href: '#',
+    href: '/trainers',
     icon: <ScholarIcon {...linkCardProps} />,
   },
   {
@@ -176,7 +175,7 @@ export default function HomePage() {
               <Link
                 key={item.id}
                 href={item.href}
-                className="group flex flex-col gap-4 rounded-2xl border border-neutral-300 bg-white p-6 drop-shadow transition hover:bg-slate-50 hover:drop-shadow-xl"
+                className="group flex flex-col gap-4 rounded-2xl border border-neutral-300 bg-white p-6 drop-shadow transition hover:drop-shadow-xl"
               >
                 {item.icon}
                 <H3 className="group-hover:underline">{item.title}</H3>

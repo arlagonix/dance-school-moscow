@@ -28,7 +28,7 @@ const PriceCard = ({
   purchaseLink,
 }: PriceCardProps) => {
   return (
-    <article className="flex max-w-[360px] flex-1 basis-[360px] flex-col rounded-xl border border-slate-300 bg-white">
+    <article className="flex max-w-[360px] flex-1 basis-[360px] flex-col rounded-xl border border-slate-300 bg-white transition-shadow hover:shadow-xl">
       <div className="my-6 flex flex-col items-center px-6">
         <h3 className="text-center text-xl font-bold uppercase">{title}</h3>
         {subtitle !== undefined && (

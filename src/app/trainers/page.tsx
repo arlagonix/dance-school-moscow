@@ -1,7 +1,7 @@
 import Breadcrumbs, { BreadcrumbType } from '@/components/Breadcrumbs'
 import H1 from '@/components/H1'
 import Main from '@/components/Main'
-import { trainersData } from './trainersData'
+import { trainersData } from '../../data/trainersData'
 import TrainerCard from './TrainerCard'
 
 const breadCrumbsData: BreadcrumbType[] = [
@@ -29,7 +29,7 @@ const TrainersPage = () => {
             description={trainer.description}
             ranks={trainer.ranks}
             imgSrc={trainer.imgSrc}
-            link={trainer.link}
+            slug={trainer.slug}
           />
         ))}
       </div>
