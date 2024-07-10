@@ -17,7 +17,7 @@ type BreadcrumbsProps = {
 const Breadcrumbs = ({ breadcrumbsData }: BreadcrumbsProps) => {
   if (breadcrumbsData.length === 0) return null
   return (
-    <div className="mt-4 flex items-center justify-center gap-2">
+    <div className="mt-8 flex flex-wrap items-center justify-center gap-2">
       {breadcrumbsData.map((item, index, arr) => {
         if (index !== arr.length - 1)
           return (

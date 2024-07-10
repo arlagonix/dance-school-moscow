@@ -7,6 +7,7 @@ import Section from '@/components/Section'
 import { trainersData } from '@/data/trainersData'
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
+import { PropsWithChildren } from 'react'
 
 const breadCrumbsData: BreadcrumbType[] = [
   {
@@ -20,6 +21,31 @@ const breadCrumbsData: BreadcrumbType[] = [
     link: '/trainers',
   },
 ]
+
+const CardsWrapper = ({ children }: PropsWithChildren) => {
+  return (
+    <div className="mt-6 flex flex-wrap justify-center gap-6">{children}</div>
+  )
+}
+
+const Card = ({
+  title,
+  description,
+}: {
+  title: string
+  description?: string
+}) => {
+  return (
+    <div className="flex max-w-[240px] flex-[0_1] basis-[240px] flex-col justify-center gap-2 rounded-xl border border-slate-100 bg-white p-6 shadow-md mobile:max-w-[100%] mobile:basis-[100%]">
+      <p className="text-center text-xl">
+        <strong>{title}</strong>
+      </p>
+      {description && (
+        <p className="text-center text-slate-500">{description}</p>
+      )}
+    </div>
+  )
+}
 
 const TrainerPage = ({ params: { slug } }: { params: { slug: string } }) => {
   const trainer = trainersData.find((item) => item.slug === slug)
@@ -51,7 +77,32 @@ const TrainerPage = ({ params: { slug } }: { params: { slug: string } }) => {
             {item}
           </P>
         ))}
+        {trainer.aboutCards !== undefined && (
+          <CardsWrapper>
+            {trainer.aboutCards.map((item) => (
+              <Card
+                key={item.title}
+                title={item.title}
+                description={item.description}
+              />
+            ))}
+          </CardsWrapper>
+        )}
       </Section>
+      {trainer.achievements !== undefined && (
+        <Section>
+          <H2>Достижения</H2>
+          <CardsWrapper>
+            {trainer?.achievements?.map((item) => (
+              <Card
+                key={item.title}
+                title={item.title}
+                description={item.description}
+              />
+            ))}
+          </CardsWrapper>
+        </Section>
+      )}
     </Main>
   )
 }

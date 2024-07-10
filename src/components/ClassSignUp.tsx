@@ -12,7 +12,7 @@ const ClassSignUp = ({
   isIncludeContract = false,
 }: ClassSignUpProps) => {
   return (
-    <div className="mt-16 flex flex-col gap-4">
+    <div className="mt-8 flex flex-col gap-4">
       <p className="text-center">
         {description ??
           'Начни танцевать хастл бесплатно: запишись на бесплатный пробный урок'}

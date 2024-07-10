@@ -21,7 +21,7 @@ const TrainersPage = () => {
     <Main>
       <H1>Преподаватели</H1>
       <Breadcrumbs breadcrumbsData={breadCrumbsData} />
-      <div className="mt-16 grid grid-cols-[repeat(auto-fit,minmax(min(320px,100%),1fr))] gap-16">
+      <div className="mt-8 grid grid-cols-[repeat(auto-fit,minmax(min(320px,100%),1fr))] gap-16">
         {trainersData.map((trainer) => (
           <TrainerCard
             key={trainer.name}
