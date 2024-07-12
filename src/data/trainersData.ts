@@ -1,4 +1,4 @@
-const defaultPath = '/trainers'
+// const defaultPath = '/trainers'
 
 export const trainersData: TrainerType[] = [
   {
@@ -33,7 +33,7 @@ export const trainersData: TrainerType[] = [
     ],
     pageDescription: ['Руководитель Школы танцев D.A.N.C.E'],
     ranks: ['Champion', 'A'],
-    imgSrc: `${defaultPath}/roman_samohvalov.jpg`,
+    imgSrc: `/trainers/roman_samohvalov/roman_samohvalov.jpg`,
     achievements: [
       {
         title: 'Вице-чемпион России',
@@ -72,6 +72,20 @@ export const trainersData: TrainerType[] = [
         description: "Шоу '17",
       },
     ],
+    photos: [
+      '/trainers/roman_samohvalov/iqwhOKwZZN8.jpg',
+      '/trainers/roman_samohvalov/Xap7id7Ogkc.jpg',
+      '/trainers/common/roma_i_dasha_001.jpg',
+      '/trainers/common/roma_i_dasha_002.jpg',
+      '/trainers/common/roma_i_dasha_003.jpg',
+      '/trainers/common/roma_i_dasha_004.jpg',
+      '/trainers/common/roma_i_dasha_005.jpg',
+    ],
+    videos: [
+      'https://www.youtube.com/watch?v=4WA-9P489ME',
+      'https://www.youtube.com/watch?v=GGxF-T74Lc4',
+      'https://www.youtube.com/watch?v=hQklxne0Lqs',
+    ],
   },
   {
     slug: 'daria_koshevaya',
@@ -82,14 +96,14 @@ export const trainersData: TrainerType[] = [
       'Преподает 14 лет',
     ],
     ranks: ['Champion', 'A'],
-    imgSrc: `${defaultPath}/daria_koshevaya.jpg`,
+    imgSrc: `/trainers/daria_koshevaya.jpg`,
   },
   {
     slug: 'leonid_leonov',
     name: 'Леонид Леонов',
     description: ['Танцует 10 лет', 'Преподает 6 лет'],
     ranks: ['Star', 'B'],
-    imgSrc: `${defaultPath}/leonid_leonov.jpg`,
+    imgSrc: `/trainers/leonid_leonov.jpg`,
   },
   {
     slug: 'daria_samohvalova',
@@ -100,49 +114,49 @@ export const trainersData: TrainerType[] = [
       'Преподает 8 лет',
     ],
     ranks: ['Main', 'D'],
-    imgSrc: `${defaultPath}/daria_samohvalova.jpg`,
+    imgSrc: `/trainers/daria_samohvalova.jpg`,
   },
   {
     slug: 'alexander_nosov',
     name: 'Александр Носов',
     description: ['Танцует 4 года', 'Преподает 2 года'],
     ranks: ['Star', 'C'],
-    imgSrc: `${defaultPath}/alexander_nosov.jpg`,
+    imgSrc: `/trainers/alexander_nosov.jpg`,
   },
   {
     slug: 'anna_stramilova',
     name: 'Анна Страмилова',
     description: ['Танцует 4 года', 'Преподает 2 года'],
     ranks: ['Main', 'D'],
-    imgSrc: `${defaultPath}/anna_stramilova.jpg`,
+    imgSrc: `/trainers/anna_stramilova.jpg`,
   },
   {
     slug: 'maxim_yaremchuk',
     name: 'Максим Яремчук',
     description: ['Танцует 7 лет', 'Преподает 2 года'],
     ranks: ['Main', 'C'],
-    imgSrc: `${defaultPath}/maxim_yaremchuk.jpg`,
+    imgSrc: `/trainers/maxim_yaremchuk.jpg`,
   },
   {
     slug: 'vyacheslav_vyazov',
     name: 'Вячеслав Вязов',
     description: ['Танцует 11 лет', 'Преподает 9 лет'],
     ranks: ['Main', 'C'],
-    imgSrc: `${defaultPath}/vyacheslav_vyazov.jpg`,
+    imgSrc: `/trainers/vyacheslav_vyazov.jpg`,
   },
   {
     slug: 'victoria_balganova',
     name: 'Виктория Балганова',
     description: ['Танцует 16 лет', 'Преподает 2 года'],
     ranks: ['Star', 'C'],
-    imgSrc: `${defaultPath}/victoria_balganova.jpg`,
+    imgSrc: `/trainers/victoria_balganova.jpg`,
   },
   {
     slug: 'anna_vasilieva',
     name: 'Анна Васильева',
     description: ['Танцует 15 лет', 'Преподает 3 года'],
     ranks: ['Star', 'D'],
-    imgSrc: `${defaultPath}/anna_vasilieva.jpg`,
+    imgSrc: `/trainers/anna_vasilieva.jpg`,
   },
   {
     slug: 'tatiana_parol',
@@ -152,7 +166,7 @@ export const trainersData: TrainerType[] = [
       'Танцует 25 лет',
       'Преподает 20 лет',
     ],
-    imgSrc: `${defaultPath}/tatiana_parol.jpg`,
+    imgSrc: `/trainers/tatiana_parol.jpg`,
   },
 ]
 
@@ -179,4 +193,6 @@ export type TrainerType = {
     title: string
     description?: string
   }[]
+  photos?: string[]
+  videos?: string[]
 }

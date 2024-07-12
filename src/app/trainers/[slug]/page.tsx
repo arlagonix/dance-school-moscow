@@ -8,6 +8,7 @@ import { trainersData } from '@/data/trainersData'
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import { PropsWithChildren } from 'react'
+import ImagesCarousel from './(components)/ImagesCarousel'
 
 const breadCrumbsData: BreadcrumbType[] = [
   {
@@ -36,7 +37,7 @@ const Card = ({
   description?: string
 }) => {
   return (
-    <div className="flex max-w-[240px] flex-[0_1] basis-[240px] flex-col justify-center gap-2 rounded-xl border border-slate-100 bg-white p-6 shadow-md mobile:max-w-[100%] mobile:basis-[100%]">
+    <div className="flex max-w-[240px] flex-[0_1] basis-[240px] flex-col justify-center gap-2 rounded-xl border border-slate-100 bg-white p-6 shadow-md mobile:max-w-[45%] mobile:basis-[45%]">
       <p className="text-center text-xl">
         <strong>{title}</strong>
       </p>
@@ -103,6 +104,10 @@ const TrainerPage = ({ params: { slug } }: { params: { slug: string } }) => {
           </CardsWrapper>
         </Section>
       )}
+      <Section>
+        <H2>Фото</H2>
+        <ImagesCarousel />
+      </Section>
     </Main>
   )
 }
