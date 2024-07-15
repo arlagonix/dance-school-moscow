@@ -9,6 +9,7 @@ import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import { PropsWithChildren } from 'react'
 import ImagesCarousel from './(components)/ImagesCarousel'
+import VideoCarousel from './(components)/VideoCarousel'
 
 const breadCrumbsData: BreadcrumbType[] = [
   {
@@ -107,6 +108,10 @@ const TrainerPage = ({ params: { slug } }: { params: { slug: string } }) => {
       <Section>
         <H2>Фото</H2>
         <ImagesCarousel />
+      </Section>
+      <Section>
+        <H2>Видео</H2>
+        <VideoCarousel />
       </Section>
     </Main>
   )

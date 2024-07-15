@@ -73,8 +73,8 @@ export const trainersData: TrainerType[] = [
       },
     ],
     photos: [
-      '/trainers/roman_samohvalov/iqwhOKwZZN8.jpg',
       '/trainers/roman_samohvalov/Xap7id7Ogkc.jpg',
+      '/trainers/roman_samohvalov/iqwhOKwZZN8.jpg',
       '/trainers/common/roma_i_dasha_001.jpg',
       '/trainers/common/roma_i_dasha_002.jpg',
       '/trainers/common/roma_i_dasha_003.jpg',
