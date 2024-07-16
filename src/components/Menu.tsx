@@ -110,6 +110,7 @@ const Menu = () => {
             height={64}
             alt="Логотип школы D.A.N.C.E."
             draggable={false}
+            priority
           />
         </Link>
         <p className="mt-2 text-sm">

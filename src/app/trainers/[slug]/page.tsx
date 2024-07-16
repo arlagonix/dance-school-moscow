@@ -10,6 +10,8 @@ import { notFound } from 'next/navigation'
 import { PropsWithChildren } from 'react'
 import ImagesCarousel from './(components)/ImagesCarousel'
 import VideoCarousel from './(components)/VideoCarousel'
+import SocialMediaCard from '@/components/SocialMediaCard'
+import Card from '@/components/Card'
 
 const breadCrumbsData: BreadcrumbType[] = [
   {
@@ -27,25 +29,6 @@ const breadCrumbsData: BreadcrumbType[] = [
 const CardsWrapper = ({ children }: PropsWithChildren) => {
   return (
     <div className="mt-6 flex flex-wrap justify-center gap-6">{children}</div>
-  )
-}
-
-const Card = ({
-  title,
-  description,
-}: {
-  title: string
-  description?: string
-}) => {
-  return (
-    <div className="flex max-w-[240px] flex-[0_1] basis-[240px] flex-col justify-center gap-2 rounded-xl border border-slate-100 bg-white p-6 shadow-md mobile:max-w-[45%] mobile:basis-[45%]">
-      <p className="text-center text-xl">
-        <strong>{title}</strong>
-      </p>
-      {description && (
-        <p className="text-center text-slate-500">{description}</p>
-      )}
-    </div>
   )
 }
 
@@ -105,14 +88,34 @@ const TrainerPage = ({ params: { slug } }: { params: { slug: string } }) => {
           </CardsWrapper>
         </Section>
       )}
-      <Section>
-        <H2>Фото</H2>
-        <ImagesCarousel />
-      </Section>
-      <Section>
-        <H2>Видео</H2>
-        <VideoCarousel />
-      </Section>
+      {trainer.socialMedia !== undefined &&
+        trainer.socialMedia.length !== 0 && (
+          <Section>
+            <H2>Контакты, профили</H2>
+            <CardsWrapper>
+              {trainer.socialMedia.map((item, index) => (
+                <SocialMediaCard
+                  key={index}
+                  id={item.id}
+                  type={item.type}
+                  url={item.url}
+                />
+              ))}
+            </CardsWrapper>
+          </Section>
+        )}
+      {trainer.photos !== undefined && (
+        <Section>
+          <H2>Фото</H2>
+          <ImagesCarousel photos={trainer.photos} />
+        </Section>
+      )}
+      {trainer.videos !== undefined && (
+        <Section>
+          <H2>Видео</H2>
+          <VideoCarousel videos={trainer.videos} />
+        </Section>
+      )}
     </Main>
   )
 }

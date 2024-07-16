@@ -6,7 +6,6 @@ import { trainersData } from '@/data/trainersData'
 import {
   Fullscreen,
   Inline,
-  // Thumbnails,
   Zoom,
   Counter,
   Download,
@@ -16,10 +15,11 @@ import 'yet-another-react-lightbox/plugins/counter.css'
 import 'yet-another-react-lightbox/plugins/thumbnails.css'
 import 'yet-another-react-lightbox/styles.css'
 
-// import { Paragraph, Title } from "@/components";
-// import slides from "@/data/slides";
+type ImagesCarouselProps = {
+  photos: string[]
+}
 
-export default function ImagesCarousel() {
+export default function ImagesCarousel({ photos }: ImagesCarouselProps) {
   return (
     <>
       <div className="mx-auto mt-6 aspect-[3/2] w-full max-w-[1000px]">
@@ -28,24 +28,15 @@ export default function ImagesCarousel() {
             zoom: 100,
             swipe: 300,
           }}
-          slides={trainersData[0]?.photos?.map((item) => ({
+          slides={photos.map((item) => ({
             src: item,
           }))}
           carousel={{
             padding: 0,
           }}
           zoom={{
-            scrollToZoom: true,
-            wheelZoomDistanceFactor: 200,
             maxZoomPixelRatio: 10,
           }}
-          // https://stackblitz.com/edit/yet-another-react-lightbox-examples?file=src%2Fexamples%2FThumbnailsPlugin.tsx&initialPath=/plugins/thumbnails
-          // thumbnails={{
-          //   border: 0,
-          //   padding: 0,
-          //   showToggle: true,
-          //   imageFit: 'cover',
-          // }}
           plugins={[Inline, Zoom, Fullscreen, Download, Counter]}
         />
       </div>

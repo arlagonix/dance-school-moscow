@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { Fragment } from 'react'
-import { TrainerType } from '../../data/trainersData'
 import Link from 'next/link'
+import { TrainerType } from '@/data/trainers/types'
 
 const RankBadge = ({ rank }: { rank: string }) => {
   return (

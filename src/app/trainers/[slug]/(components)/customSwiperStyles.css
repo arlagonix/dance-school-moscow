@@ -1,0 +1,23 @@
+.swiper-button-prev,
+.swiper-button-next {
+  --swiper-navigation-size: 20px;
+  color: rgba(255, 255, 255, 0.8);
+  transition:
+    0.15s color,
+    0.15s background-color;
+  padding: 2rem;
+  translate: 0 -2rem;
+  border: 1px solid white;
+  border-radius: 100vmax;
+  backdrop-filter: blur(4px);
+
+  &:not(.swiper-button-disabled):hover {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.75);
+  }
+}
+
+:is(.swiper-button-prev, .swiper-button-next).swiper-button-disabled {
+  cursor: not-allowed;
+  pointer-events: initial;
+}
