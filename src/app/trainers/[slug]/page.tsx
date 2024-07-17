@@ -58,9 +58,9 @@ const TrainerPage = ({ params: { slug } }: { params: { slug: string } }) => {
       <Section>
         <H2>О преподавателе</H2>
         {trainer?.pageDescription?.map((item) => (
-          <P key={item} className="text-center">
+          <p key={item} className="mt-2 text-center">
             {item}
-          </P>
+          </p>
         ))}
         {trainer.aboutCards !== undefined && (
           <CardsWrapper>

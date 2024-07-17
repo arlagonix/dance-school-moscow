@@ -106,6 +106,7 @@ export const dariaKoshevaya: TrainerType = {
     'https://youtu.be/LxPWBBOQBU0?si=GYflyWXA9H-yAges',
     'https://youtu.be/hRgJIigJZbU',
     'https://youtu.be/sF-Lu748zHs',
+    'https://vk.com/koshevayadaria?z=clip4001832_456245137',
   ],
   socialMedia: [
     {
