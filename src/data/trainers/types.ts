@@ -7,6 +7,8 @@ export type TrainerType = {
   description?: string[]
   /** Page description */
   pageDescription?: string[]
+  /** Page description but in markdown */
+  markDownPageDescription?: string
   /** Trainer ranks (DnD, classic, etc.) */
   ranks?: string[]
   /** Source of the trainer avatar image */

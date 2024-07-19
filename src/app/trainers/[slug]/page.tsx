@@ -12,6 +12,7 @@ import ImagesCarousel from './(components)/ImagesCarousel'
 import VideoCarousel from './(components)/VideoCarousel'
 import SocialMediaCard from '@/components/SocialMediaCard'
 import Card from '@/components/Card'
+import Markdown from 'react-markdown'
 
 const breadCrumbsData: BreadcrumbType[] = [
   {
@@ -58,10 +59,16 @@ const TrainerPage = ({ params: { slug } }: { params: { slug: string } }) => {
       <Section>
         <H2>О преподавателе</H2>
         {trainer?.pageDescription?.map((item) => (
-          <p key={item} className="mt-2 text-center">
+          <p key={item} className="mt-4 text-center">
             {item}
           </p>
         ))}
+        {trainer.markDownPageDescription !== undefined && (
+          // https://github.com/tailwindlabs/tailwindcss-typography
+          <Markdown className="prose mt-4">
+            {trainer.markDownPageDescription}
+          </Markdown>
+        )}
         {trainer.aboutCards !== undefined && (
           <CardsWrapper>
             {trainer.aboutCards.map((item) => (
