@@ -2,7 +2,6 @@ import H2 from '@/components/H2'
 import P from '@/components/P'
 import Section from '@/components/Section'
 import Image from 'next/image'
-import Link from 'next/link'
 import { SVGProps } from 'react'
 
 import MoneyBagIcon from '@/components/svg/icons_big/money_bag.svg'
@@ -12,7 +11,6 @@ import ReviewIcon from '@/components/svg/icons_big/review.svg'
 import DollarIcon from '@/components/svg/icons_big/dollar.svg'
 import ScholarHatIcon from '@/components/svg/icons_big/scholar_hat.svg'
 import PirateMapIcon from '@/components/svg/icons_big/pirate_map.svg'
-import H3 from '@/components/H3'
 
 import {
   Accordion,
@@ -23,14 +21,7 @@ import {
 import Main from '@/components/Main'
 import H1 from '@/components/H1'
 import ClassSignUp from '@/components/ClassSignUp'
-
-type LinkCardType = {
-  id: number
-  title: string
-  description: string
-  href: string
-  icon: React.ReactNode
-}
+import LinkCard, { LinkCardType } from '@/components/LinkCard'
 
 const linkCardProps: SVGProps<SVGElement> = {
   width: 64,
@@ -39,14 +30,14 @@ const linkCardProps: SVGProps<SVGElement> = {
 
 const linkCardsData: LinkCardType[] = [
   {
-    id: 1,
+    id: '1',
     title: 'Стоимость занятий',
     description: 'Абонементы на посещение занятий, способы оплаты, акции',
     href: '/pricing',
     icon: <MoneyBagIcon {...linkCardProps} />,
   },
   {
-    id: 2,
+    id: '2',
     title: 'Расписание занятий',
     description:
       'Здесь вы узнаете, какие у нас есть виды занятий и сможете подобрать те, которые наиболее подойдут вашим навыкам и графику',
@@ -54,7 +45,7 @@ const linkCardsData: LinkCardType[] = [
     icon: <CalendarIcon {...linkCardProps} />,
   },
   {
-    id: 3,
+    id: '3',
     title: 'Преподаватели',
     description:
       'Здесь вы узнаете, кто преподает в нашей школе, и сможете найти того, с кем вам будет наиболее комфортно заниматься.',
@@ -62,7 +53,7 @@ const linkCardsData: LinkCardType[] = [
     icon: <ScholarIcon {...linkCardProps} />,
   },
   {
-    id: 4,
+    id: '4',
     title: 'Отзывы',
     description:
       'Здесь вы узнаете, что о нас думают люди, которые занимаются или раньше занимались в нашей школе.',
@@ -70,7 +61,7 @@ const linkCardsData: LinkCardType[] = [
     icon: <ReviewIcon {...linkCardProps} />,
   },
   {
-    id: 5,
+    id: '5',
     title: 'Аренда залов',
     description:
       'Информация о доступных залах, когда можно арендовать, стоимость аренды, с кем связаться по деталям аренды',
@@ -78,7 +69,7 @@ const linkCardsData: LinkCardType[] = [
     icon: <DollarIcon {...linkCardProps} />,
   },
   {
-    id: 6,
+    id: '6',
     title: 'О школе',
     description:
       'Здесь вы узнаете, чем живет школа, сможете посмотреть на кадры с наших занятий, выступления наших учеников, фото и видео с наших мероприятий.',
@@ -86,7 +77,7 @@ const linkCardsData: LinkCardType[] = [
     icon: <ScholarHatIcon {...linkCardProps} />,
   },
   {
-    id: 7,
+    id: '7',
     title: 'Как нас найти',
     description:
       'Наш адрес и как добраться до нас от ближайших станций метро. Есть даже видео путь!',
@@ -172,15 +163,13 @@ export default function HomePage() {
           <H2>Полезная информация</H2>
           <div className="mt-6 grid grid-cols-[repeat(auto-fit,minmax(min(300px,100%),1fr))] gap-8">
             {linkCardsData.map((item) => (
-              <Link
+              <LinkCard
                 key={item.id}
                 href={item.href}
-                className="group flex flex-col gap-4 rounded-2xl border border-neutral-300 bg-white p-6 drop-shadow transition hover:drop-shadow-xl"
-              >
-                {item.icon}
-                <H3 className="group-hover:underline">{item.title}</H3>
-                <p className="leading-7 text-neutral-500">{item.description}</p>
-              </Link>
+                icon={item.icon}
+                title={item.title}
+                description={item.description}
+              />
             ))}
           </div>
         </Section>

@@ -29,7 +29,6 @@ const PricingPage = () => {
         description="Пока ты думаешь, другие пробуют и у них получается. И у тебя получится!"
         isIncludeContract
       />
-      <div></div>
       {pricingData.map((pricingGroup) => (
         <section key={pricingGroup.id} className="mt-16">
           {pricingGroup.title !== undefined && <H2>{pricingGroup.title}</H2>}

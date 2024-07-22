@@ -57,6 +57,7 @@ const linksData: HeaderType[] = [
     id: 3,
     name: 'Расписание',
     icon: <CalendarClockIcon {...menuIconProps} />,
+    link: '/schedule',
   },
   {
     id: 4,
