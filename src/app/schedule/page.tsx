@@ -11,6 +11,7 @@ import CupIcon from '@/components/svg/icons_big/cup_with_star.svg'
 import DumbellsIcon from '@/components/svg/icons_big/dumbells.svg'
 import SoloIcon from '@/components/svg/icons_big/solo.svg'
 import KidIcon from '@/components/svg/icons_big/little_one.svg'
+import { schedulesData } from '@/data/schedule'
 
 const breadCrumbsData: BreadcrumbType[] = [
   {
@@ -86,11 +87,11 @@ const SchedulePage = () => {
       <Breadcrumbs breadcrumbsData={breadCrumbsData} />
       <ClassSignUp description="Если не знаете, что выбрать, вы всегда можете связаться с нами и задать все интересующие вопросы:" />
       <div className="mt-6 grid grid-cols-[repeat(auto-fit,minmax(min(300px,100%),1fr))] gap-8">
-        {linkCardsData.map((item) => (
+        {schedulesData.map((item) => (
           <LinkCard
-            key={item.id}
-            href={item.href}
-            icon={item.icon}
+            key={item.slug}
+            href={`${basePath}/${item.slug}`}
+            icon={item.cardIcon}
             title={item.title}
             description={item.description}
           />

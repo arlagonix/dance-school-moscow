@@ -1,7 +1,7 @@
 import Breadcrumbs, { BreadcrumbType } from '@/components/Breadcrumbs'
 import H1 from '@/components/H1'
 import Main from '@/components/Main'
-import { trainersData } from '../../data/trainersData'
+import { trainersData } from '../../data/trainers'
 import TrainerCard from './TrainerCard'
 
 const breadCrumbsData: BreadcrumbType[] = [

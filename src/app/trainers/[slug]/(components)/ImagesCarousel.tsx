@@ -1,7 +1,7 @@
 'use client'
 
 import Lightbox from 'yet-another-react-lightbox'
-import { trainersData } from '@/data/trainersData'
+import { trainersData } from '@/data'
 
 import {
   Fullscreen,

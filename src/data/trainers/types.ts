@@ -1,6 +1,6 @@
 export type TrainerType = {
-  /**  */
-  slug: string
+  /** Trainer's slug in URL */
+  slug: TrainerSlug
   /** Trainer name */
   name: string
   /** Trainer description */
@@ -33,3 +33,16 @@ export type SocialMediaType = {
   id: string
   url: string
 }
+
+export type TrainerSlug =
+  | 'roman_samohvalov'
+  | 'daria_koshevaya'
+  | 'leonid_leonov'
+  | 'daria_samohvalova'
+  | 'alexander_nosov'
+  | 'anna_stramilova'
+  | 'vyacheslav_vyazov'
+  | 'victoria_balganova'
+  | 'maxim_yaremchuk'
+  | 'anna_vasilieva'
+  | 'tatiana_parol'
