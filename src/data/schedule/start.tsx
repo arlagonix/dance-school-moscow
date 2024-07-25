@@ -16,7 +16,7 @@ export const start: ScheduleGroupType = {
       ],
       description: [['Понедельник, Среда', '19:00 - 20:30']],
       trainerSlugs: ['alexander_nosov', 'anna_stramilova'],
-      info: ['Идёт набор!'],
+      info: ['Идёт набор!', 'Давайте все налетайте'],
       isButton: true,
       isNew: true,
     },

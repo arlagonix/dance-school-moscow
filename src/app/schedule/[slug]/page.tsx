@@ -1,7 +1,12 @@
 import Breadcrumbs, { type BreadcrumbType } from '@/components/Breadcrumbs'
+import ClassSignUp from '@/components/ClassSignUp'
 import H1 from '@/components/H1'
 import Main from '@/components/Main'
+import { Button } from '@/components/ui/button'
 import { schedulesData } from '@/data/schedule'
+import { trainersData } from '@/data/trainers'
+import Image from 'next/image'
+import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { Fragment } from 'react'
 
@@ -37,6 +42,7 @@ const ScheduleGroupPage = ({
           },
         ]}
       />
+      <ClassSignUp description="Пока ты думаешь, другие пробуют и у них получается. И у тебя получится!" />
       <div className="mt-6 flex flex-wrap justify-center gap-6">
         {scheduleGroup.schedules.map((item, index) => (
           <article
@@ -72,7 +78,49 @@ const ScheduleGroupPage = ({
                   </p>
                 )
               })}
+              <div className="flex flex-col">
+                {item.trainerSlugs.map((slug) => {
+                  const trainer = trainersData.find(
+                    (trainer) => trainer.slug === slug
+                  )
+                  if (trainer === undefined) return null
+                  return (
+                    <Link
+                      key={slug}
+                      className="flex items-center justify-center gap-2 self-center rounded p-1 transition-colors hover:bg-slate-200"
+                      href={`/trainers/${slug}`}
+                    >
+                      <Image
+                        src={trainer.imgSrc}
+                        width={1000}
+                        height={1000}
+                        alt={trainer.name}
+                        className="block h-8 w-8 self-center rounded-full object-cover shadow"
+                      />
+                      <div className="underline">{trainer.name}</div>
+                    </Link>
+                  )
+                })}
+              </div>
             </div>
+            {item.info !== undefined && item.info.length !== 0 && (
+              <div className="flex min-h-[100px] grow items-center justify-center border-t border-t-slate-300 bg-slate-100 p-6">
+                <p className="text-center text-lg font-semibold text-neutral-900">
+                  {item.info.map((item, index, arr) => {
+                    return (
+                      <Fragment key={index}>
+                        {item} {index !== arr.length - 1 && <br />}
+                      </Fragment>
+                    )
+                  })}
+                </p>
+              </div>
+            )}
+            {item.isButton && (
+              <div className="border-t border-t-slate-300 p-6">
+                <Button className="w-full">Записаться</Button>
+              </div>
+            )}
           </article>
         ))}
       </div>
