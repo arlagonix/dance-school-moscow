@@ -85,7 +85,7 @@ const SchedulePage = () => {
     <Main>
       <H1>Расписаний занятий</H1>
       <Breadcrumbs breadcrumbsData={breadCrumbsData} />
-      <ClassSignUp description="Если не знаете, что выбрать, вы всегда можете связаться с нами и задать все интересующие вопросы:" />
+      <ClassSignUp description="Если не знаете, что выбрать, вы всегда можете связаться с нами и задать все вопросы:" />
       <div className="mt-6 grid grid-cols-[repeat(auto-fit,minmax(min(300px,100%),1fr))] gap-8">
         {schedulesData.map((item) => (
           <LinkCard

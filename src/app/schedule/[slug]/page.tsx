@@ -47,7 +47,7 @@ const ScheduleGroupPage = ({
         {scheduleGroup.schedules.map((item, index) => (
           <article
             key={index}
-            className="flex max-w-[360px] flex-1 basis-[360px] flex-col rounded-xl border border-slate-300 bg-white transition-shadow hover:shadow-xl"
+            className="flex max-w-[360px] flex-1 basis-[360px] flex-col overflow-hidden rounded-xl border border-slate-300 bg-white transition-shadow hover:shadow-xl"
           >
             <div className="my-6 flex flex-col items-center px-6">
               <div className="flex items-center gap-3">
@@ -61,15 +61,18 @@ const ScheduleGroupPage = ({
                 )}
               </div>
               {item.subtitle !== undefined && (
-                <p className="mt-6 text-center text-slate-500">
+                <p className="mt-2 text-center text-slate-500">
                   {item.subtitle}
                 </p>
               )}
             </div>
-            <div className="flex flex-col gap-6 border-t border-t-slate-300 px-6 py-6">
+            <div className="flex grow flex-col justify-center gap-4 border-t border-t-slate-300 px-6 py-6">
               {item?.description?.map((item, itemIndex) => {
                 return (
-                  <p key={itemIndex} className="text-center">
+                  <p
+                    key={itemIndex}
+                    className="text-center text-lg font-semibold"
+                  >
                     {item.map((line, lineIndex, arr) => (
                       <Fragment key={lineIndex}>
                         {line} {lineIndex !== arr.length - 1 && <br />}
@@ -104,7 +107,7 @@ const ScheduleGroupPage = ({
               </div>
             </div>
             {item.info !== undefined && item.info.length !== 0 && (
-              <div className="flex min-h-[100px] grow items-center justify-center border-t border-t-slate-300 bg-slate-100 p-6">
+              <div className="flex grow items-center justify-center border-t border-t-slate-300 bg-slate-100 p-6">
                 <p className="text-center text-lg font-semibold text-neutral-900">
                   {item.info.map((item, index, arr) => {
                     return (

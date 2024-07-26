@@ -1,5 +1,12 @@
-import { sport } from './sport'
-import { start } from './start'
 import { ScheduleGroupType } from './types'
+import { continuing } from './continuing'
+import { start } from './start'
+import { sport } from './sport'
+import { special } from './special'
 
-export const schedulesData: ScheduleGroupType[] = [start, sport]
+export const schedulesData: ScheduleGroupType[] = [
+  start,
+  continuing,
+  sport,
+  special,
+]
