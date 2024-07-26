@@ -23,5 +23,26 @@ export const sport: ScheduleGroupType = {
       trainerSlugs: ['leonid_leonov', 'daria_samohvalova'],
       isButton: true,
     },
+    {
+      title: 'JnJ Rising Star 0',
+      subtitle: ['Основы базовой ритмики'],
+      description: [['Понедельник, Среда', '19:00 - 20:30']],
+      trainerSlugs: ['roman_samohvalov', 'daria_koshevaya'],
+      isButton: true,
+    },
+    {
+      title: 'JnJ Main 0',
+      subtitle: ['Основы музыкальности'],
+      description: [['Понедельник, Среда', '20:30 - 22:00']],
+      trainerSlugs: ['roman_samohvalov', 'daria_koshevaya'],
+      isButton: true,
+    },
+    {
+      title: 'JnJ Main + Star',
+      subtitle: ['Взаимодействие'],
+      description: [['Вторник, Четверг', '20:30 - 22:00']],
+      trainerSlugs: ['roman_samohvalov', 'daria_koshevaya'],
+      isButton: true,
+    },
   ],
 }
