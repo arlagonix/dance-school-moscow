@@ -81,30 +81,32 @@ const ScheduleGroupPage = ({
                   </p>
                 )
               })}
-              <div className="flex flex-col">
-                {item.trainerSlugs.map((slug) => {
-                  const trainer = trainersData.find(
-                    (trainer) => trainer.slug === slug
-                  )
-                  if (trainer === undefined) return null
-                  return (
-                    <Link
-                      key={slug}
-                      className="flex items-center justify-center gap-2 self-center rounded p-1 transition-colors hover:bg-slate-200"
-                      href={`/trainers/${slug}`}
-                    >
-                      <Image
-                        src={trainer.imgSrc}
-                        width={1000}
-                        height={1000}
-                        alt={trainer.name}
-                        className="block h-8 w-8 self-center rounded-full object-cover shadow"
-                      />
-                      <div className="underline">{trainer.name}</div>
-                    </Link>
-                  )
-                })}
-              </div>
+              {item.trainerSlugs !== undefined && (
+                <div className="flex flex-col">
+                  {item.trainerSlugs.map((slug) => {
+                    const trainer = trainersData.find(
+                      (trainer) => trainer.slug === slug
+                    )
+                    if (trainer === undefined) return null
+                    return (
+                      <Link
+                        key={slug}
+                        className="flex items-center justify-center gap-2 self-center rounded p-1 transition-colors hover:bg-slate-200"
+                        href={`/trainers/${slug}`}
+                      >
+                        <Image
+                          src={trainer.imgSrc}
+                          width={1000}
+                          height={1000}
+                          alt={trainer.name}
+                          className="block h-8 w-8 self-center rounded-full object-cover shadow"
+                        />
+                        <div className="underline">{trainer.name}</div>
+                      </Link>
+                    )
+                  })}
+                </div>
+              )}
             </div>
             {item.info !== undefined && item.info.length !== 0 && (
               <div className="flex grow items-center justify-center border-t border-t-slate-300 bg-slate-100 p-6">

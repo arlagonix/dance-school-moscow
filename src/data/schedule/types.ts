@@ -13,7 +13,7 @@ type ScheduleType = {
   isNew?: boolean
   subtitle?: string[]
   description?: string[][]
-  trainerSlugs: TrainerSlug[]
+  trainerSlugs?: TrainerSlug[]
   info?: string[]
   isButton?: boolean
 }
