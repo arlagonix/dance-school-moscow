@@ -52,14 +52,14 @@ const linkCardsData: LinkCardType[] = [
     href: '/trainers',
     icon: <ScholarIcon {...linkCardProps} />,
   },
-  {
-    id: '4',
-    title: 'Отзывы',
-    description:
-      'Здесь вы узнаете, что о нас думают люди, которые занимаются или раньше занимались в нашей школе.',
-    href: '#',
-    icon: <ReviewIcon {...linkCardProps} />,
-  },
+  // {
+  //   id: '4',
+  //   title: 'Отзывы',
+  //   description:
+  //     'Здесь вы узнаете, что о нас думают люди, которые занимаются или раньше занимались в нашей школе.',
+  //   href: '#',
+  //   icon: <ReviewIcon {...linkCardProps} />,
+  // },
   {
     id: '5',
     title: 'Аренда залов',

@@ -12,6 +12,7 @@ import VideoCarousel from './(components)/VideoCarousel'
 import SocialMediaCard from '@/components/SocialMediaCard'
 import Card from '@/components/Card'
 import Markdown from 'react-markdown'
+import CardsWrapper from '@/components/CardsWrapper'
 
 const breadCrumbsData: BreadcrumbType[] = [
   {
@@ -25,12 +26,6 @@ const breadCrumbsData: BreadcrumbType[] = [
     link: '/trainers',
   },
 ]
-
-const CardsWrapper = ({ children }: PropsWithChildren) => {
-  return (
-    <div className="mt-6 flex flex-wrap justify-center gap-6">{children}</div>
-  )
-}
 
 const TrainerPage = ({ params: { slug } }: { params: { slug: string } }) => {
   const trainer = trainersData.find((item) => item.slug === slug)

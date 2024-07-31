@@ -1,9 +1,9 @@
 type SectionProps = {
-  children?: React.ReactNode;
-};
+  children?: React.ReactNode
+}
 
 const Section = ({ children }: SectionProps) => {
-  return <section className="mt-16">{children}</section>;
-};
+  return <section className="mt-12">{children}</section>
+}
 
-export default Section;
+export default Section

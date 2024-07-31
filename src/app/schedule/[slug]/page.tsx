@@ -1,4 +1,4 @@
-import Breadcrumbs, { type BreadcrumbType } from '@/components/Breadcrumbs'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import ClassSignUp from '@/components/ClassSignUp'
 import H1 from '@/components/H1'
 import Main from '@/components/Main'
@@ -9,19 +9,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { Fragment } from 'react'
-
-const breadCrumbsData: BreadcrumbType[] = [
-  {
-    id: 1,
-    title: 'Главная',
-    link: '/',
-  },
-  {
-    id: 2,
-    title: 'Расписание',
-    link: '/schedule',
-  },
-]
 
 const ScheduleGroupPage = ({
   params: { slug },
@@ -35,7 +22,16 @@ const ScheduleGroupPage = ({
       <H1>{scheduleGroup.title}</H1>
       <Breadcrumbs
         breadcrumbsData={[
-          ...breadCrumbsData,
+          {
+            id: 1,
+            title: 'Главная',
+            link: '/',
+          },
+          {
+            id: 2,
+            title: 'Расписание',
+            link: '/schedule',
+          },
           {
             id: 3,
             title: scheduleGroup.title,

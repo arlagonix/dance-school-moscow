@@ -7,7 +7,7 @@ import HomeIcon from '@/components/svg/icons_small/home.svg'
 import DollarIcon from '@/components/svg/icons_small/dollar-sign.svg'
 import CalendarClockIcon from '@/components/svg/icons_small/calendar-clock.svg'
 import UsersIcon from '@/components/svg/icons_small/users.svg'
-import SmileIcon from '@/components/svg/icons_small/smile.svg'
+// import SmileIcon from '@/components/svg/icons_small/smile.svg'
 import InfoIcon from '@/components/svg/icons_small/info.svg'
 import PartyIcon from '@/components/svg/icons_small/party.svg'
 import MapIcon from '@/components/svg/icons_small/map.svg'
@@ -65,15 +65,16 @@ const linksData: HeaderType[] = [
     icon: <UsersIcon {...menuIconProps} />,
     link: '/trainers',
   },
-  {
-    id: 5,
-    name: 'Отзывы',
-    icon: <SmileIcon {...menuIconProps} />,
-  },
+  // {
+  //   id: 5,
+  //   name: 'Отзывы',
+  //   icon: <SmileIcon {...menuIconProps} />,
+  // },
   {
     id: 6,
     name: 'Аренда залов',
     icon: <DollarIcon {...menuIconProps} />,
+    link: '/rent',
   },
   {
     id: 7,
