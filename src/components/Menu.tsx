@@ -3,23 +3,23 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import HomeIcon from '@/components/svg/icons_small/home.svg'
-import DollarIcon from '@/components/svg/icons_small/dollar-sign.svg'
 import CalendarClockIcon from '@/components/svg/icons_small/calendar-clock.svg'
+import DollarIcon from '@/components/svg/icons_small/dollar-sign.svg'
+import HomeIcon from '@/components/svg/icons_small/home.svg'
 import UsersIcon from '@/components/svg/icons_small/users.svg'
 // import SmileIcon from '@/components/svg/icons_small/smile.svg'
-import InfoIcon from '@/components/svg/icons_small/info.svg'
-import PartyIcon from '@/components/svg/icons_small/party.svg'
-import MapIcon from '@/components/svg/icons_small/map.svg'
-import PhoneIcon from '@/components/svg/icons_small/phone-call.svg'
-import MailIcon from '@/components/svg/icons_small/mail.svg'
-import VkIcon from '@/components/svg/icons_small/vk.svg'
 import ClockIcon from '@/components/svg/icons_small/clock.svg'
+import InfoIcon from '@/components/svg/icons_small/info.svg'
+import MailIcon from '@/components/svg/icons_small/mail.svg'
+import MapIcon from '@/components/svg/icons_small/map.svg'
+import PartyIcon from '@/components/svg/icons_small/party.svg'
+import PhoneIcon from '@/components/svg/icons_small/phone-call.svg'
+import VkIcon from '@/components/svg/icons_small/vk.svg'
 
-import { SVGProps, useState } from 'react'
 import { Button } from '@/components/ui/button'
-import { cn } from '@/lib/utils'
 import useDisableBodyScrolling from '@/lib/hooks/useDisableScrolling'
+import { cn } from '@/lib/utils'
+import { SVGProps, useState } from 'react'
 
 type HeaderType = {
   id: number
@@ -90,6 +90,7 @@ const linksData: HeaderType[] = [
     id: 9,
     name: 'Как нас найти',
     icon: <MapIcon {...menuIconProps} />,
+    link: '/location',
   },
 ]
 
