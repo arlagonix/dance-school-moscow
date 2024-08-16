@@ -139,8 +139,12 @@ const Menu = () => {
           </strong>
         </p>
       </div>
-      <div className="fixed top-0 z-20 flex w-[min(100vw,768px)] items-center justify-between border-b border-neutral-300 bg-white pl-4 desktop:hidden">
-        <Link href="/">
+      <div className="fixed top-0 z-20 flex w-[min(100vw,768px)] items-center border-b border-neutral-300 bg-white pr-4 desktop:hidden">
+        <ToggleMenu isOpen={showMobileMenu} clickHandler={toggleMenu} />
+        <Link
+          href="/"
+          className="center absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform"
+        >
           <Image
             src="/dance_logo.png"
             width={63}
@@ -149,7 +153,6 @@ const Menu = () => {
             draggable={false}
           />
         </Link>
-        <ToggleMenu isOpen={showMobileMenu} clickHandler={toggleMenu} />
       </div>
       <div
         className={cn(

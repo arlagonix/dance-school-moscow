@@ -3,7 +3,7 @@ type SectionProps = {
 }
 
 const Section = ({ children }: SectionProps) => {
-  return <section className="mt-12">{children}</section>
+  return <section className="mobile:mt-6 desktop:mt-12">{children}</section>
 }
 
 export default Section

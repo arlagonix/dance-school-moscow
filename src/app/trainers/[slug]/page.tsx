@@ -1,18 +1,17 @@
 import Breadcrumbs, { type BreadcrumbType } from '@/components/Breadcrumbs'
+import Card from '@/components/Card'
+import CardsWrapper from '@/components/CardsWrapper'
 import H1 from '@/components/H1'
 import H2 from '@/components/H2'
 import Main from '@/components/Main'
 import Section from '@/components/Section'
+import SocialMediaCard from '@/components/SocialMediaCard'
 import { trainersData } from '@/data/trainers'
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
-import { PropsWithChildren } from 'react'
+import Markdown from 'react-markdown'
 import ImagesCarousel from './(components)/ImagesCarousel'
 import VideoCarousel from './(components)/VideoCarousel'
-import SocialMediaCard from '@/components/SocialMediaCard'
-import Card from '@/components/Card'
-import Markdown from 'react-markdown'
-import CardsWrapper from '@/components/CardsWrapper'
 
 const breadCrumbsData: BreadcrumbType[] = [
   {
@@ -47,7 +46,7 @@ const TrainerPage = ({ params: { slug } }: { params: { slug: string } }) => {
         width={2000}
         height={2000}
         alt={trainer.name}
-        className="mt-8 block aspect-[1.5/1] w-full rounded-2xl border border-neutral-200 object-cover shadow transition-shadow group-hover:shadow-xl"
+        className="mt-8 block w-full rounded-2xl border border-neutral-200 object-cover shadow transition-shadow group-hover:shadow-xl mobile:aspect-[1/1] desktop:aspect-[1.5/1]"
         draggable={false}
       />
       <Section>
