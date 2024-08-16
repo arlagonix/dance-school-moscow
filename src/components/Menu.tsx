@@ -20,6 +20,7 @@ import { Button } from '@/components/ui/button'
 import useDisableBodyScrolling from '@/lib/hooks/useDisableScrolling'
 import { cn } from '@/lib/utils'
 import { SVGProps, useState } from 'react'
+import ToggleMenu from './ToggleMenu'
 
 type HeaderType = {
   id: number
@@ -126,7 +127,7 @@ const Menu = () => {
           </strong>
         </p>
       </div>
-      <div className="fixed top-0 z-20 flex w-[min(100vw,768px)] items-center justify-between border-b border-neutral-300 bg-white p-4 desktop:hidden">
+      <div className="fixed top-0 z-20 flex w-[min(100vw,768px)] items-center justify-between border-b border-neutral-300 bg-white pl-4 desktop:hidden">
         <Link href="/">
           <Image
             src="/dance_logo.png"
@@ -136,11 +137,14 @@ const Menu = () => {
             draggable={false}
           />
         </Link>
-        <button onClick={() => setShowMobileMenu((prev) => !prev)}>Open</button>
+        <ToggleMenu
+          isOpen={showMobileMenu}
+          clickHandler={() => setShowMobileMenu((prev) => !prev)}
+        />
       </div>
       <div
         className={cn(
-          'mx-auto h-screen mobile:w-[min(100%-8px*2,var(--standard-width))] mobile:pb-4 mobile:pt-16',
+          'mx-auto h-screen mobile:w-[min(100%-8px*2,var(--standard-width))] mobile:pb-4 mobile:pt-10',
           !showMobileMenu && 'mobile:hidden'
         )}
       >
