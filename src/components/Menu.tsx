@@ -19,7 +19,7 @@ import VkIcon from '@/components/svg/icons_small/vk.svg'
 import { Button } from '@/components/ui/button'
 import useDisableBodyScrolling from '@/lib/hooks/useDisableScrolling'
 import { cn } from '@/lib/utils'
-import { SVGProps, useState } from 'react'
+import { SVGProps, useEffect, useState } from 'react'
 import ToggleMenu from './ToggleMenu'
 
 type HeaderType = {
@@ -97,7 +97,19 @@ const linksData: HeaderType[] = [
 
 const Menu = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false)
+  const closeMenu = () => setShowMobileMenu(false)
+  const toggleMenu = () => setShowMobileMenu((prev) => !prev)
   useDisableBodyScrolling(showMobileMenu)
+
+  useEffect(() => {
+    window.addEventListener('popstate', closeMenu) // Listen for popstate events (back/forward navigation)
+    window.addEventListener('hashchange', closeMenu) // Optionally listen for hash changes
+    return () => {
+      window.removeEventListener('popstate', closeMenu)
+      window.removeEventListener('hashchange', closeMenu)
+    }
+  }, [])
+
   return (
     <nav
       className={cn(
@@ -137,10 +149,7 @@ const Menu = () => {
             draggable={false}
           />
         </Link>
-        <ToggleMenu
-          isOpen={showMobileMenu}
-          clickHandler={() => setShowMobileMenu((prev) => !prev)}
-        />
+        <ToggleMenu isOpen={showMobileMenu} clickHandler={toggleMenu} />
       </div>
       <div
         className={cn(
@@ -153,6 +162,9 @@ const Menu = () => {
             <li key={item.id}>
               <Link
                 href={item.link ?? '#'}
+                onClick={() => {
+                  setShowMobileMenu(false)
+                }}
                 className="group flex translate-x-[-0.5rem] items-center gap-2 rounded-lg p-2 transition-colors hover:bg-slate-200"
               >
                 {item.icon}
