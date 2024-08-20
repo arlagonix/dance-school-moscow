@@ -81,6 +81,7 @@ const linksData: HeaderType[] = [
     id: 7,
     name: 'О школе',
     icon: <InfoIcon {...menuIconProps} />,
+    link: '/about',
   },
   {
     id: 8,

@@ -1,6 +1,8 @@
-import { SocialMediaType } from '@/data/trainers/types'
-import VkIcon from '@/components/svg/vk.svg'
 import RadioHustleIcon from '@/components/svg/radioHustle.svg'
+import TelegramIcon from '@/components/svg/telegram.svg'
+import VkIcon from '@/components/svg/vk.svg'
+import YouTubeIcon from '@/components/svg/youtube.svg'
+import { SocialMediaType } from '@/data/trainers/types'
 import Link from 'next/link'
 
 const socialMediaMap = {
@@ -12,9 +14,24 @@ const socialMediaMap = {
     icon: <RadioHustleIcon width={64} height={64} />,
     name: 'RadioHustle',
   },
+  youtube: {
+    icon: <YouTubeIcon width={64} height={64} />,
+    name: 'YouTube',
+  },
+  telegram: {
+    icon: <TelegramIcon width={64} height={64} />,
+    name: 'Telegram',
+  },
 }
 
-const SocialMediaCard = ({ type, id, url }: SocialMediaType) => {
+const SocialMediaCard = ({
+  type,
+  id,
+  url,
+  customName,
+}: SocialMediaType & {
+  customName?: string
+}) => {
   return (
     <Link
       href={url}
@@ -23,7 +40,7 @@ const SocialMediaCard = ({ type, id, url }: SocialMediaType) => {
     >
       <div className="flex flex-col justify-between">
         <h3 className="text-xl font-bold text-neutral-900">
-          {socialMediaMap[type].name}
+          {customName ?? socialMediaMap[type].name}
         </h3>
         <p className="text-slate-500 group-hover:underline">@{id}</p>
       </div>

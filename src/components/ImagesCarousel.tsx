@@ -1,15 +1,13 @@
 'use client'
 
 import Lightbox from 'yet-another-react-lightbox'
-
 import {
+  Counter,
+  Download,
   Fullscreen,
   Inline,
   Zoom,
-  Counter,
-  Download,
 } from 'yet-another-react-lightbox/plugins'
-
 import 'yet-another-react-lightbox/plugins/counter.css'
 import 'yet-another-react-lightbox/plugins/thumbnails.css'
 import 'yet-another-react-lightbox/styles.css'

@@ -3,15 +3,15 @@ import Card from '@/components/Card'
 import CardsWrapper from '@/components/CardsWrapper'
 import H1 from '@/components/H1'
 import H2 from '@/components/H2'
+import ImagesCarousel from '@/components/ImagesCarousel'
 import Main from '@/components/Main'
 import Section from '@/components/Section'
 import SocialMediaCard from '@/components/SocialMediaCard'
+import VideoCarousel from '@/components/VideoCarousel'
 import { trainersData } from '@/data/trainers'
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import Markdown from 'react-markdown'
-import ImagesCarousel from './(components)/ImagesCarousel'
-import VideoCarousel from './(components)/VideoCarousel'
 
 const breadCrumbsData: BreadcrumbType[] = [
   {

@@ -29,7 +29,7 @@ export type TrainerType = {
 }
 
 export type SocialMediaType = {
-  type: 'vk' | 'radioHustle'
+  type: 'vk' | 'radioHustle' | 'youtube' | 'telegram'
   id: string
   url: string
 }
