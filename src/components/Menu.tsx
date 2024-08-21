@@ -87,6 +87,7 @@ const linksData: HeaderType[] = [
     id: 8,
     name: 'Мероприятия',
     icon: <PartyIcon {...menuIconProps} />,
+    link: '/events',
   },
   {
     id: 9,

@@ -2,7 +2,7 @@ import { TrainerType } from './types'
 
 export const leonidLeonov: TrainerType = {
   slug: 'leonid_leonov',
-  name: 'Леонид Леонов',
+  name: 'Леонид «Огненный Лев» Леонов',
   ranks: ['Star', 'B'],
   description: ['Танцует 10 лет', 'Преподает 6 лет'],
   aboutCards: [

@@ -1,6 +1,6 @@
-import Link from 'next/link'
 import { Button, buttonVariants } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
+import Link from 'next/link'
 
 type PriceCardProps = {
   title: string
@@ -66,7 +66,6 @@ const PriceCard = ({
           {!Array.isArray(description) && description !== undefined && (
             <p className="leading-7">{description}</p>
           )}
-          {/* <p>{description}</p> */}
         </div>
       )}
       {price !== '0' && purchaseLink !== undefined && (
