@@ -25,7 +25,7 @@ export const linkCardsData: LinkCardType[] = [
     title: 'Расписание занятий',
     description:
       'Здесь вы узнаете, какие у нас есть виды занятий и сможете подобрать те, которые наиболее подойдут вашим навыкам и графику',
-    href: '#',
+    href: '/schedule',
     icon: <CalendarIcon {...linkCardProps} />,
   },
   {
@@ -49,7 +49,7 @@ export const linkCardsData: LinkCardType[] = [
     title: 'Аренда залов',
     description:
       'Информация о доступных залах, когда можно арендовать, стоимость аренды, с кем связаться по деталям аренды',
-    href: '#',
+    href: '/rent',
     icon: <DollarIcon {...linkCardProps} />,
   },
   {
@@ -57,7 +57,7 @@ export const linkCardsData: LinkCardType[] = [
     title: 'О школе',
     description:
       'Здесь вы узнаете, чем живет школа, сможете посмотреть на кадры с наших занятий, выступления наших учеников, фото и видео с наших мероприятий.',
-    href: '#',
+    href: '/about',
     icon: <ScholarHatIcon {...linkCardProps} />,
   },
   {
@@ -65,7 +65,7 @@ export const linkCardsData: LinkCardType[] = [
     title: 'Как нас найти',
     description:
       'Наш адрес и как добраться до нас от ближайших станций метро. Есть даже видео путь!',
-    href: '#',
+    href: '/location',
     icon: <PirateMapIcon {...linkCardProps} />,
   },
 ]

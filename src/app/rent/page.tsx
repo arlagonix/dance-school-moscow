@@ -68,8 +68,7 @@ const RentPage = () => {
           },
           {
             id: 2,
-            title: 'Аренда',
-            link: '/rent',
+            title: 'Аренда залов',
           },
         ]}
       />
