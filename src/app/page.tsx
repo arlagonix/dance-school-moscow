@@ -57,35 +57,13 @@ export default function HomePage() {
               />
             ))}
           </div>
-          {/* <div className="mt-6 flex flex-col gap-4">
-            <Alert>
-              <div>
-                <GraphIcon width={64} height={64} />
-              </div>
-              <AlertTitle>Учим танцевать более 7 лет</AlertTitle>
-              <AlertDescription>
-                Наша школа - одна из ведущих школ Москвы по обучению хастлу.
-                Наши ученики- призеры и победители международных, всероссийских
-                и московских конкурсов по хастлу и дискофоксу.
-              </AlertDescription>
-            </Alert>
-            <Alert>
-              <TelegramIcon width={16} height={16} />
-              <AlertTitle>Звездный тренерский состав</AlertTitle>
-              <AlertDescription>
-                Все наши тренера - топовые танцоры хастла и победители различных
-                турниров. У нас преподают: Чемпион Мира по хастлу, а так же
-                Чемпионы России по хастлу и дискофоксу.
-              </AlertDescription>
-            </Alert>
-          </div> */}
         </Section>
         <Section>
           <H2>Полезная информация</H2>
           <div className="mt-6 grid grid-cols-[repeat(auto-fit,minmax(min(300px,100%),1fr))] gap-8">
             {linkCardsData.map((item) => (
               <LinkCard
-                key={item.id}
+                key={`${item.title}${item.href}`}
                 href={item.href}
                 icon={item.icon}
                 title={item.title}

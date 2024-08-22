@@ -12,8 +12,9 @@ import ClockIcon from '@/components/svg/icons_small/clock.svg'
 import InfoIcon from '@/components/svg/icons_small/info.svg'
 import MailIcon from '@/components/svg/icons_small/mail.svg'
 import MapIcon from '@/components/svg/icons_small/map.svg'
-import PartyIcon from '@/components/svg/icons_small/party.svg'
 import PhoneIcon from '@/components/svg/icons_small/phone-call.svg'
+import ShoppingCartIcon from '@/components/svg/icons_small/shopping-cart.svg'
+import TicketIcon from '@/components/svg/icons_small/ticket.svg'
 import VkIcon from '@/components/svg/icons_small/vk.svg'
 
 import { Button } from '@/components/ui/button'
@@ -23,7 +24,6 @@ import { SVGProps, useEffect, useState } from 'react'
 import ToggleMenu from './ToggleMenu'
 
 type HeaderType = {
-  id: number
   name: string
   icon?: React.ReactNode
   link?: string
@@ -43,54 +43,50 @@ const infoSectionIconProps: SVGProps<SVGElement> = {
 
 const linksData: HeaderType[] = [
   {
-    id: 1,
     name: 'Главная',
     icon: <HomeIcon {...menuIconProps} />,
     link: '/',
   },
   {
-    id: 2,
     name: 'Стоимость занятий',
     icon: <DollarIcon {...menuIconProps} />,
     link: '/pricing',
   },
   {
-    id: 3,
     name: 'Расписание',
     icon: <CalendarClockIcon {...menuIconProps} />,
     link: '/schedule',
   },
   {
-    id: 4,
     name: 'Преподаватели',
     icon: <UsersIcon {...menuIconProps} />,
     link: '/trainers',
   },
   // {
-  //   id: 5,
   //   name: 'Отзывы',
   //   icon: <SmileIcon {...menuIconProps} />,
   // },
   {
-    id: 6,
     name: 'Аренда залов',
     icon: <DollarIcon {...menuIconProps} />,
     link: '/rent',
   },
   {
-    id: 7,
     name: 'О школе',
     icon: <InfoIcon {...menuIconProps} />,
     link: '/about',
   },
   {
-    id: 8,
     name: 'Мероприятия',
-    icon: <PartyIcon {...menuIconProps} />,
+    icon: <TicketIcon {...menuIconProps} />,
     link: '/events',
   },
   {
-    id: 9,
+    name: 'Магазин',
+    icon: <ShoppingCartIcon {...menuIconProps} />,
+    link: '/shop',
+  },
+  {
     name: 'Как нас найти',
     icon: <MapIcon {...menuIconProps} />,
     link: '/location',
@@ -164,7 +160,7 @@ const Menu = () => {
       >
         <ul className="mt-4 desktop:mt-8">
           {linksData.map((item) => (
-            <li key={item.id}>
+            <li key={`${item.name}${item.link}`}>
               <Link
                 href={item.link ?? '#'}
                 onClick={() => {

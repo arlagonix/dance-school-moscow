@@ -5,6 +5,8 @@ import MoneyBagIcon from '@/components/svg/icons_big/money_bag.svg'
 import PirateMapIcon from '@/components/svg/icons_big/pirate_map.svg'
 import ScholarIcon from '@/components/svg/icons_big/scholar.svg'
 import ScholarHatIcon from '@/components/svg/icons_big/scholar_hat.svg'
+import ShoppingCartIcon from '@/components/svg/icons_big/shopping-cart.svg'
+import TicketIcon from '@/components/svg/icons_big/ticket.svg'
 import { SVGProps } from 'react'
 
 const linkCardProps: SVGProps<SVGElement> = {
@@ -14,14 +16,12 @@ const linkCardProps: SVGProps<SVGElement> = {
 
 export const linkCardsData: LinkCardType[] = [
   {
-    id: '1',
     title: 'Стоимость занятий',
     description: 'Абонементы на посещение занятий, способы оплаты, акции',
     href: '/pricing',
     icon: <MoneyBagIcon {...linkCardProps} />,
   },
   {
-    id: '2',
     title: 'Расписание занятий',
     description:
       'Здесь вы узнаете, какие у нас есть виды занятий и сможете подобрать те, которые наиболее подойдут вашим навыкам и графику',
@@ -29,7 +29,6 @@ export const linkCardsData: LinkCardType[] = [
     icon: <CalendarIcon {...linkCardProps} />,
   },
   {
-    id: '3',
     title: 'Преподаватели',
     description:
       'Здесь вы узнаете, кто преподает в нашей школе, и сможете найти того, с кем вам будет наиболее комфортно заниматься.',
@@ -37,7 +36,6 @@ export const linkCardsData: LinkCardType[] = [
     icon: <ScholarIcon {...linkCardProps} />,
   },
   // {
-  //   id: '4',
   //   title: 'Отзывы',
   //   description:
   //     'Здесь вы узнаете, что о нас думают люди, которые занимаются или раньше занимались в нашей школе.',
@@ -45,7 +43,6 @@ export const linkCardsData: LinkCardType[] = [
   //   icon: <ReviewIcon {...linkCardProps} />,
   // },
   {
-    id: '5',
     title: 'Аренда залов',
     description:
       'Информация о доступных залах, когда можно арендовать, стоимость аренды, с кем связаться по деталям аренды',
@@ -53,7 +50,6 @@ export const linkCardsData: LinkCardType[] = [
     icon: <DollarIcon {...linkCardProps} />,
   },
   {
-    id: '6',
     title: 'О школе',
     description:
       'Здесь вы узнаете, чем живет школа, сможете посмотреть на кадры с наших занятий, выступления наших учеников, фото и видео с наших мероприятий.',
@@ -61,7 +57,19 @@ export const linkCardsData: LinkCardType[] = [
     icon: <ScholarHatIcon {...linkCardProps} />,
   },
   {
-    id: '7',
+    title: 'Мероприятия',
+    description:
+      'Здесь вы узнаете о предстоящих важных событиях школы и хастла.',
+    href: '/events',
+    icon: <TicketIcon {...linkCardProps} />,
+  },
+  {
+    title: 'Магазин',
+    description: 'Здесь вы сможете купить наш мерч.',
+    href: '/shop',
+    icon: <ShoppingCartIcon {...linkCardProps} />,
+  },
+  {
     title: 'Как нас найти',
     description:
       'Наш адрес и как добраться до нас от ближайших станций метро. Есть даже видео путь!',

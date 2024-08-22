@@ -2,19 +2,13 @@ import Link from 'next/link'
 import H3 from './H3'
 
 export type LinkCardType = {
-  id: string
   href: string
   icon: React.ReactNode
   title: string
   description: string
 }
 
-const LinkCard = ({
-  href,
-  icon,
-  title,
-  description,
-}: Omit<LinkCardType, 'id'>) => {
+const LinkCard = ({ href, icon, title, description }: LinkCardType) => {
   return (
     <Link
       href={href}
