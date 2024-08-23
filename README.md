@@ -85,6 +85,22 @@
   <img src="./screenshots/mobile_03.png" width="40%">
 </p>
 
+Also I significantly optimized the site:
+
+The performance of my site: https://pagespeed.web.dev/analysis/https-dance-school-moscow-vercel-app/eb21uy6l9z?form_factor=mobile&hl=en
+
+<p align="center">
+  <img src="./screenshots/stats_new_mobile.png" width="40%">
+  <img src="./screenshots/stats_new_desktop.png" width="40%">
+</p>
+
+The performance of the old site: https://pagespeed.web.dev/analysis/https-danceschool-moscow/4c6sxfv3ke?form_factor=mobile%3Fhl%3Den&hl=en
+
+<p align="center">
+  <img src="./screenshots/stats_old_mobile.png" width="40%">
+  <img src="./screenshots/stats_old_desktop.png" width="40%">
+</p>
+
 ## ℹ️ About
 
 I studied dances in D.A.N.C.E. school. When I saw their site I thought that there is some space for improvement.
