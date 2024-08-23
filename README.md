@@ -95,6 +95,10 @@ The original site looks like that: https://danceschool.moscow/
   <img src="./screenshots/original_01.png" width="100%">
 </p>
 
+Thus I made a new design from scratch and implemented it.
+
+The main goal of the project is to demonstrate my skills in NextJS, TailwindCSS. Also I wanted to try out the ShadcnUI library
+
 ## ⚙️ Tools
 
 - **HTML5**
