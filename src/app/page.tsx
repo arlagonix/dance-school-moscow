@@ -33,8 +33,7 @@ export default function HomePage() {
             и дискофоксу. У нас есть и группы для детей. Хастл - это парный
             социальный танец, который основан на взаимодействии и импровизации.
             Он не требует особых физических данных и подходит для людей любого
-            возраста. Дискофокс - это разновидность хастла. Текст такой себе, на
-            троечку, надо бы получше что-то придумать.
+            возраста. Дискофокс - это разновидность хастла.
           </P>
           <Image
             src="/main.jpg"
@@ -59,6 +58,17 @@ export default function HomePage() {
           </div>
         </Section>
         <Section>
+          <H2>Ответы на вопросы</H2>
+          <Accordion type="single" collapsible className="mt-6">
+            {questionsData.map((item) => (
+              <AccordionItem value={`item-${item.id}`} key={item.id}>
+                <AccordionTrigger>{item.question}</AccordionTrigger>
+                <AccordionContent>{item.answer}</AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </Section>
+        <Section>
           <H2>Полезная информация</H2>
           <div className="mt-6 grid grid-cols-[repeat(auto-fit,minmax(min(300px,100%),1fr))] gap-8">
             {linkCardsData.map((item) => (
@@ -71,17 +81,6 @@ export default function HomePage() {
               />
             ))}
           </div>
-        </Section>
-        <Section>
-          <H2>Ответы на вопросы</H2>
-          <Accordion type="single" collapsible className="mt-6">
-            {questionsData.map((item) => (
-              <AccordionItem value={`item-${item.id}`} key={item.id}>
-                <AccordionTrigger>{item.question}</AccordionTrigger>
-                <AccordionContent>{item.answer}</AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
         </Section>
       </Main>
     </>
