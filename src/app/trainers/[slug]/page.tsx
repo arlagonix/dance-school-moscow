@@ -1,4 +1,4 @@
-import Breadcrumbs, { type BreadcrumbType } from '@/components/Breadcrumbs'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import Card from '@/components/Card'
 import CardsWrapper from '@/components/CardsWrapper'
 import H1 from '@/components/H1'
@@ -13,19 +13,6 @@ import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import Markdown from 'react-markdown'
 
-const breadCrumbsData: BreadcrumbType[] = [
-  {
-    id: 1,
-    title: 'Главная',
-    link: '/',
-  },
-  {
-    id: 2,
-    title: 'Преподаватели',
-    link: '/trainers',
-  },
-]
-
 const TrainerPage = ({ params: { slug } }: { params: { slug: string } }) => {
   const trainer = trainersData.find((item) => item.slug === slug)
   if (trainer === undefined) notFound()
@@ -34,9 +21,15 @@ const TrainerPage = ({ params: { slug } }: { params: { slug: string } }) => {
       <H1>{trainer.name}</H1>
       <Breadcrumbs
         breadcrumbsData={[
-          ...breadCrumbsData,
           {
-            id: 3,
+            title: 'Главная',
+            link: '/',
+          },
+          {
+            title: 'Преподаватели',
+            link: '/trainers',
+          },
+          {
             title: trainer.name,
           },
         ]}
