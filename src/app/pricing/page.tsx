@@ -1,30 +1,28 @@
-import Breadcrumbs, { BreadcrumbType } from '@/components/Breadcrumbs'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import ClassSignUp from '@/components/ClassSignUp'
 import H1 from '@/components/H1'
-import Main from '@/components/Main'
-import PriceCard from '@/components/PriceCard'
-import { pricingData } from './pricingData'
 import H2 from '@/components/H2'
+import Main from '@/components/Main'
 import P from '@/components/P'
+import PriceCard from '@/components/PriceCard'
 import { Fragment } from 'react'
-
-const breadCrumbsData: BreadcrumbType[] = [
-  {
-    id: 1,
-    title: 'Главная',
-    link: '/',
-  },
-  {
-    id: 2,
-    title: 'Стоимость занятий',
-  },
-]
+import { pricingData } from './pricingData'
 
 const PricingPage = () => {
   return (
     <Main>
       <H1>Стоимость занятий</H1>
-      <Breadcrumbs breadcrumbsData={breadCrumbsData} />
+      <Breadcrumbs
+        breadcrumbsData={[
+          {
+            title: 'Главная',
+            link: '/',
+          },
+          {
+            title: 'Стоимость занятий',
+          },
+        ]}
+      />
       <ClassSignUp
         description="Пока ты думаешь, другие пробуют и у них получается. И у тебя получится!"
         isIncludeContract

@@ -23,17 +23,14 @@ const ScheduleGroupPage = ({
       <Breadcrumbs
         breadcrumbsData={[
           {
-            id: 1,
             title: 'Главная',
             link: '/',
           },
           {
-            id: 2,
             title: 'Расписание',
             link: '/schedule',
           },
           {
-            id: 3,
             title: scheduleGroup.title,
           },
         ]}

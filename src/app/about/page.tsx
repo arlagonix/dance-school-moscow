@@ -1,4 +1,4 @@
-import Breadcrumbs, { BreadcrumbType } from '@/components/Breadcrumbs'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import CardsWrapper from '@/components/CardsWrapper'
 import H1 from '@/components/H1'
 import H2 from '@/components/H2'
@@ -8,23 +8,21 @@ import Section from '@/components/Section'
 import SocialMediaCard from '@/components/SocialMediaCard'
 import VideoCarousel from '@/components/VideoCarousel'
 
-const breadCrumbsData: BreadcrumbType[] = [
-  {
-    id: 1,
-    title: 'Главная',
-    link: '/',
-  },
-  {
-    id: 2,
-    title: 'Как нас найти',
-  },
-]
-
 const AboutPage = () => {
   return (
     <Main>
       <H1>О школе</H1>
-      <Breadcrumbs breadcrumbsData={breadCrumbsData} />
+      <Breadcrumbs
+        breadcrumbsData={[
+          {
+            title: 'Главная',
+            link: '/',
+          },
+          {
+            title: 'Как нас найти',
+          },
+        ]}
+      />
       <Section>
         <H2>Наши соцсети</H2>
         <CardsWrapper>

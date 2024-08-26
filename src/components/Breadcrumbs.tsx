@@ -9,8 +9,6 @@ import {
 } from './ui/breadcrumb'
 
 export type BreadcrumbType = {
-  /** Unique identifier for `key` prop */
-  id: number
   /** Text of the breadcrumb */
   title: string
   /** Link of the breadcrumb. Is ignored for the last item */
@@ -29,7 +27,7 @@ const Breadcrumbs = ({ breadcrumbsData }: BreadcrumbsProps) => {
         {breadcrumbsData.map((item, index, arr) => {
           if (index !== arr.length - 1)
             return (
-              <Fragment key={item.id}>
+              <Fragment key={`${item.title}${item.link}`}>
                 <BreadcrumbItem>
                   <BreadcrumbLink href={item.link ?? '#'}>
                     {item.title}
@@ -39,7 +37,7 @@ const Breadcrumbs = ({ breadcrumbsData }: BreadcrumbsProps) => {
               </Fragment>
             )
           return (
-            <BreadcrumbItem key={item.id}>
+            <BreadcrumbItem key={`${item.title}${item.link}`}>
               <BreadcrumbPage>{item.title}</BreadcrumbPage>
             </BreadcrumbItem>
           )

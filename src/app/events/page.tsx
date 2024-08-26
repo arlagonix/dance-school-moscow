@@ -11,12 +11,10 @@ const EventsPage = () => {
       <Breadcrumbs
         breadcrumbsData={[
           {
-            id: 1,
             title: 'Главная',
             link: '/',
           },
           {
-            id: 2,
             title: 'Мероприятия',
           },
         ]}

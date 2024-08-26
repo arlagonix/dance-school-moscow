@@ -1,27 +1,25 @@
-import Breadcrumbs, { BreadcrumbType } from '@/components/Breadcrumbs'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import H1 from '@/components/H1'
 import H2 from '@/components/H2'
 import Main from '@/components/Main'
 import Section from '@/components/Section'
 import Markdown from 'react-markdown'
 
-const breadCrumbsData: BreadcrumbType[] = [
-  {
-    id: 1,
-    title: 'Главная',
-    link: '/',
-  },
-  {
-    id: 2,
-    title: 'Как нас найти',
-  },
-]
-
 const LocationPage = () => {
   return (
     <Main>
       <H1>Как нас найти</H1>
-      <Breadcrumbs breadcrumbsData={breadCrumbsData} />
+      <Breadcrumbs
+        breadcrumbsData={[
+          {
+            title: 'Главная',
+            link: '/',
+          },
+          {
+            title: 'Как нас найти',
+          },
+        ]}
+      />
       <Section>
         <H2>Наш адрес</H2>
         <p className="pt-6 text-center text-xl font-medium">
