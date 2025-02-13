@@ -12,7 +12,7 @@ const LinkCard = ({ href, icon, title, description }: LinkCardType) => {
   return (
     <Link
       href={href}
-      className="group flex flex-col gap-4 rounded-2xl border border-neutral-300 bg-white p-6 drop-shadow transition hover:drop-shadow-xl"
+      className="group flex h-full flex-col gap-4 rounded-2xl border border-neutral-300 bg-white p-6 drop-shadow transition hover:drop-shadow-xl"
     >
       {icon}
       <H3 className="group-hover:underline mobile:underline">{title}</H3>
