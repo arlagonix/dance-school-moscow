@@ -7,7 +7,7 @@ interface ComponentProps {
   className?: string
 }
 
-const SpringWrapper = ({ children, className }: ComponentProps) => {
+const SpringWrapperClickable = ({ children, className }: ComponentProps) => {
   return (
     <motion.div
       className={className}
@@ -15,10 +15,13 @@ const SpringWrapper = ({ children, className }: ComponentProps) => {
         scale: 1.02,
         transition: { type: 'spring', stiffness: 300, damping: 10 },
       }}
+      whileTap={{
+        scale: 0.97,
+      }}
     >
       {children}
     </motion.div>
   )
 }
 
-export default SpringWrapper
+export default SpringWrapperClickable

@@ -7,6 +7,7 @@ import LinkCard from '@/components/LinkCard'
 import Main from '@/components/Main'
 import P from '@/components/P'
 import Section from '@/components/Section'
+import SpringWrapper from '@/components/SpringWrapper'
 import {
   Accordion,
   AccordionContent,
@@ -43,14 +44,16 @@ export default function HomePage() {
               импровизации. Он не требует особых физических данных и подходит
               для людей любого возраста. Дискофокс - это разновидность хастла.
             </P>
-            <Image
-              src="/main.jpg"
-              width={2560}
-              height={1600}
-              alt="Люди, которые вместе создают школу D.A.N.C.E"
-              className="mt-4 h-auto w-full rounded-lg object-cover"
-              draggable={false}
-            />
+            <SpringWrapper>
+              <Image
+                src="/main.jpg"
+                width={2560}
+                height={1600}
+                alt="Люди, которые вместе создают школу D.A.N.C.E"
+                className="mt-4 h-auto w-full rounded-lg object-cover"
+                draggable={false}
+              />
+            </SpringWrapper>
           </Section>
         </FadeInWrapper>
         <Section>
@@ -60,11 +63,13 @@ export default function HomePage() {
           <div className="mt-6 grid grid-cols-[repeat(auto-fit,minmax(min(300px,100%),1fr))] gap-8">
             {whyUsData.map((item) => (
               <FadeInWrapper key={item.id}>
-                <ImageCard
-                  icon={item.icon}
-                  title={item.title}
-                  description={item.description}
-                />
+                <SpringWrapper className="h-full">
+                  <ImageCard
+                    icon={item.icon}
+                    title={item.title}
+                    description={item.description}
+                  />
+                </SpringWrapper>
               </FadeInWrapper>
             ))}
           </div>
